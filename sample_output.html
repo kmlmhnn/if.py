@@ -1,0 +1,23 @@
+
+<html> <head> <script type="text/javascript">
+window.onload = function(){
+    for (elem of document.getElementsByClassName("content")){
+        elem.style.display = 'none';
+    }
+    let start = document.querySelector("p#start");
+    start.style.display = 'inline';
+    document.querySelectorAll("p.content a").forEach((link) => {
+        link.onclick = () => {
+            link.parentElement.style.display = 'none';
+            document.querySelector("p#" + link.id).style.display = 'inline';
+        };
+    });
+}
+</script> <style type="text/css">a {font-style: italic; color: black }</style>
+</head> <body>
+<p id='start' class='content'><strong>start is a special name</strong></br>The first <a href='#' id='section'>section</a> shown will be the one <a href='#' id='name'>named</a> start.</br>Click <a href='#' id='caveats'>here</a> for more caveats.</br></p>
+<p id='name' class='content'><strong>each section has a name</strong></br><a href='#' id='start'>.</a></br></p>
+<p id='section' class='content'><strong>a section is the basic building unit of the narrative</strong></br>The narrative is made of multiple sections.</br>Each section can be <a href='#' id='link'>linked</a> to other sections through their <a href='#' id='name'>names</a>.</br>For eg: <a href='#' id='start'>start</a> is name.</br></p>
+<p id='link' class='content'><strong>links consist of 2 parts enclosed inside curly braces:</strong></br>The first part specifies the text that is displayed as the link.</br>The second part specifies the <a href='#' id='name'>name</a> of the <a href='#' id='section'>section</a> to link to.</br></p>
+<p id='caveats' class='content'>1. Each section in the input must be terminated by one or more newlines.</br>2. Braces unless as part of a link, cannot be used anywhere.</br>3. The body of the section cannot be empty.</br>4. Links cannot be specified in the heading of a section.</br><a href='#' id='start'>.</a></br></p>
+</body> </html>

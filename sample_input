@@ -1,0 +1,23 @@
+start : start is a special name
+The first {section}{section} shown will be the one {named}{name} start.
+Click {here}{caveats} for more caveats.
+
+name : each section has a name
+{.}{start}
+
+section : a section is the basic building unit of the narrative
+The narrative is made of multiple sections.
+Each section can be {linked}{link} to other sections through their {names}{name}.
+For eg: {start}{start} is name.
+
+link: links consist of 2 parts enclosed inside curly braces:
+The first part specifies the text that is displayed as the link.
+The second part specifies the {name}{name} of the {section}{section} to link to.
+
+caveats:
+1. Each section in the input must be terminated by one or more newlines.
+2. Braces unless as part of a link, cannot be used anywhere.
+3. The body of the section cannot be empty.
+4. Links cannot be specified in the heading of a section.
+{.}{start}
+
